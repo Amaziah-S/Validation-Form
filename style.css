@@ -1,0 +1,464 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Outfit',sans-serif;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    position:relative;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(255,255,255,.08),
+    transparent 40%),
+
+    radial-gradient(circle at bottom right,
+    rgba(255,255,255,.05),
+    transparent 40%),
+
+    #050505;
+}
+
+/* Animated Grid Background */
+
+body::before{
+    content:'';
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    linear-gradient(
+    rgba(255,255,255,.03) 1px,
+    transparent 1px),
+
+    linear-gradient(
+    90deg,
+    rgba(255,255,255,.03) 1px,
+    transparent 1px);
+
+    background-size:50px 50px;
+
+    animation:gridMove 20s linear infinite;
+
+    z-index:-3;
+}
+
+/* Floating Dots */
+
+body::after{
+
+    content:'';
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background-image:
+    radial-gradient(
+    rgba(255,255,255,.5) 1px,
+    transparent 1px);
+
+    background-size:80px 80px;
+
+    opacity:.08;
+
+    animation:particles 30s linear infinite;
+
+    z-index:-2;
+}
+
+.container{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Aura Effects */
+
+.container::before{
+    content:'';
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:white;
+
+    opacity:.08;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    top:-180px;
+    left:-180px;
+}
+
+.container::after{
+    content:'';
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:white;
+
+    opacity:.05;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    bottom:-180px;
+    right:-180px;
+}
+
+/* Premium Card */
+
+.form-box{
+
+    width:470px;
+
+    padding:50px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    border-radius:30px;
+
+    background:
+    rgba(255,255,255,.04);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(35px);
+
+    box-shadow:
+    0 25px 60px rgba(0,0,0,.55),
+    0 0 60px rgba(255,255,255,.03);
+
+    animation:
+    reveal 1s ease,
+    floatCard 7s ease-in-out infinite;
+
+    z-index:5;
+
+    transition:.5s;
+}
+
+.form-box:hover{
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,.65),
+    0 0 50px rgba(255,255,255,.08);
+}
+
+.form-box::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:2px;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    white,
+    transparent
+    );
+}
+
+/* Title */
+
+.form-box h1{
+
+    text-align:center;
+
+    font-size:2.6rem;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    margin-bottom:12px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #fff,
+    #888,
+    #fff
+    );
+
+    background-size:200%;
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+    animation:shine 4s linear infinite;
+}
+
+.form-box p{
+
+    text-align:center;
+
+    color:#9ca3af;
+
+    font-size:.95rem;
+
+    margin-bottom:30px;
+
+    letter-spacing:1px;
+}
+
+/* Inputs */
+
+.input-group{
+    margin-bottom:18px;
+}
+
+input,
+textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border-radius:15px;
+
+    outline:none;
+
+    color:white;
+
+    font-size:15px;
+
+    background:
+    rgba(255,255,255,.03);
+
+    border:
+    1px solid rgba(255,255,255,.08);
+
+    transition:.4s;
+}
+
+input::placeholder,
+textarea::placeholder{
+    color:#6b7280;
+}
+
+input:hover,
+textarea:hover{
+
+    transform:translateY(-2px);
+
+    border-color:
+    rgba(255,255,255,.25);
+}
+
+input:focus,
+textarea:focus{
+
+    border-color:white;
+
+    background:
+    rgba(255,255,255,.05);
+
+    box-shadow:
+    0 0 25px rgba(255,255,255,.15);
+}
+
+textarea{
+    resize:none;
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    padding:16px;
+
+    margin-top:10px;
+
+    border:none;
+
+    border-radius:15px;
+
+    background:white;
+
+    color:black;
+
+    font-size:15px;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+    cursor:pointer;
+
+    position:relative;
+
+    overflow:hidden;
+
+    transition:.4s;
+}
+
+button::before{
+
+    content:'';
+
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:100%;
+    height:100%;
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.7),
+    transparent
+    );
+
+    transition:.8s;
+}
+
+button:hover::before{
+    left:100%;
+}
+
+button:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 15px 35px rgba(255,255,255,.18);
+}
+
+#error{
+
+    text-align:center;
+
+    margin-top:15px;
+
+    font-size:14px;
+
+    font-weight:500;
+}
+
+/* Animations */
+
+@keyframes shine{
+
+    0%{
+        background-position:0%;
+    }
+
+    100%{
+        background-position:200%;
+    }
+}
+
+@keyframes reveal{
+
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes floatCard{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+}
+
+@keyframes gridMove{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(50px);
+    }
+}
+
+@keyframes particles{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(80px);
+    }
+}
+
+/* Mobile */
+
+@media(max-width:550px){
+
+    .form-box{
+
+        width:92%;
+
+        padding:35px 25px;
+    }
+
+    .form-box h1{
+
+        font-size:2rem;
+    }
+}
